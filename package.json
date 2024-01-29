@@ -1,0 +1,19 @@
+{
+  "name": "hacks.fun",
+  "version": "1.0.0",
+  "description": "My Website",
+  "main": "main.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hack"
+  ],
+  "author": "issam Belayachi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7"
+  }
+}

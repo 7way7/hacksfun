@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacks.fun - Main</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Hacks.fun</h1>
+        <nav>
+            <a href="#" onclick="showSection('mainContent')">Main</a>
+            <a href="#" onclick="showSection('blogsContent')">Blogs</a>
+            <a href="#" onclick="showSection('tagsContent')">Tags</a>
+            <a href="#" onclick="showSection('aboutContent')">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mainContent">
+            <h2>Main Section</h2>
+            <p>Welcome to Hacks.fun, where you'll find amazing hacks and tips!</p>
+        </section>
+
+        <section id="blogsContent" style="display: none;">
+            <h2>Blogs</h2>
+
+            <form id="blogForm" enctype="multipart/form-data">
+                <label for="blogTitle">Title:</label>
+                <input type="text" id="blogTitle" name="title" required><br><br>
+        
+                <label for="blogText">Text:</label><br>
+                <textarea id="blogText" name="text" rows="10" cols="50" required></textarea><br><br>
+        
+                <label for="blogImage">Image:</label>
+                <input type="file" id="blogImage" name="image" accept="image/*"><br><br>
+        
+                <input type="submit" value="Save Blog Post">
+            </form>
+
+            <!-- Display Blogs -->
+            <div id="blogsContainer"></div>
+        </section>
+
+        <section id="tagsContent" style="display: none;">
+            <h2>Tags</h2>
+            <p>Explore our blogs by different tags to find the hacks that interest you the most.</p>
+            <!-- Add tags display or functionality here if needed -->
+        </section>
+
+        <section id="aboutContent" style="display: none;">
+            <h2>About Us</h2>
+            <p>Learn more about Hacks.fun and our mission to share knowledge and creativity.</p>
+        </section>
+
+        
+    </main>
+    <script>
+        document.getElementById('blogForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const formData = new FormData(this);
+    
+            fetch('/addBlog', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save blog post.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message);
+                // Redirect or perform other actions as needed
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while saving the blog post.');
+            });
+        });
+    </script>
+    
+
+    <footer>
+        <p>Hacks.fun @Made by Issam Bealaychi</p>
+    </footer>
+</body>
+</html>

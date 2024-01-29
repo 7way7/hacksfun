@@ -1,0 +1,70 @@
+body {
+    font-family: Courier, monospace;
+    margin: 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center; /* Center text in the body */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2ecc71; /* Green */
+    color: #fff; /* White */
+}
+
+h1 {
+    font-weight: bold; /* Make the title bold */
+    color: #fff; /* White */
+    margin: 0; /* Remove default margin */
+}
+
+h2 {
+    color: #27ae60; /* Dark green for h2 */
+    margin: 0; /* Remove default margin */
+}
+
+nav {
+    margin-left: auto; /* Moves the navigation to the right */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* White */
+    font-weight: bold;
+    margin-right: 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a:hover {
+    color: #27ae60; /* Darker green on hover */
+}
+
+main {
+    text-align: left; /* Align main content to the left */
+}
+
+section {
+    background-color: #fff; /* White */
+    padding: 20px;
+    margin: 20px 0; /* Add some vertical margin for spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    section {
+        max-width: 800px; /* Set a maximum width for larger screens */
+        margin: 20px auto; /* Center the section horizontally with auto margins */
+    }
+}
+p {
+    padding: 5px;
+    background-color: #ffffff; /* Green */
+    color: #333; /* White */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px; /* Set the font size for the footer */
+}
